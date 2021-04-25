@@ -3,7 +3,7 @@
 # Contributor: Piotr Matela <piotrekmat@protonmail.com>
 
 pkgname=dolphin-git
-pkgver=20.12.1.r114.g8236e95c7
+pkgver=21.03.80.r33.gccb29c603
 pkgrel=1
 pkgdesc='KDE File Manager (Git)'
 arch=(i686 x86_64)
@@ -16,7 +16,7 @@ conflicts=("${pkgname%-git}")
 source=('git+https://invent.kde.org/system/dolphin.git'
 	'0001-Revert-Disallow-executing-Dolphin-as-root-on-Linux.patch')
 md5sums=('SKIP'
-	'677fbd9b6ff947d67d8ae9ba25eb0e01')
+	'a1590bb1a0ad16dc02eaf163388efd64')
 
 pkgver() {
     git -C "${pkgname%-git}" describe --long | sed 's/^v//;s/\([^-]*-g\)/r\1/;s/-/./g'

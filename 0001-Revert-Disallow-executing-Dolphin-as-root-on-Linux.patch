@@ -1,29 +1,16 @@
-From ba74d639178916221c748b0d5d89f7ac4f5ed669 Mon Sep 17 00:00:00 2001
-From: Fabian Vogt <fabian@ritter-vogt.de>
-Date: Sat, 22 Apr 2017 14:00:33 +0200
-Subject: [PATCH] Revert "Disallow executing Dolphin as root on Linux"
+diff '--color=auto' -Naur a/src/main.cpp b/src/main.cpp
+--- a/src/main.cpp	2021-04-25 16:51:47.836644030 +0100
++++ b/src/main.cpp	2021-04-25 16:54:05.352659466 +0100
+@@ -32,25 +32,8 @@
+ #include <QDBusConnectionInterface>
+ #include <QSessionManager>
 
-This reverts commit 0bdd8e0b0516555c6233fdc7901e9b417cf89791.
-We ship a desktop file to open dolphin as root and we allow YaST on the
-desktop. So this patch is absolutely pointless for us.
----
- src/main.cpp | 13 -------------
- 1 file changed, 13 deletions(-)
-
-Index: dolphin-18.07.70git.20180603T132131~3c6ecfa24/src/main.cpp
-===================================================================
---- dolphin-18.07.70git.20180603T132131~3c6ecfa24.orig/src/main.cpp
-+++ dolphin-18.07.70git.20180603T132131~3c6ecfa24/src/main.cpp
-@@ -35,25 +35,8 @@
- #include <QApplication>
- #include <QCommandLineParser>
- 
 -#ifndef Q_OS_WIN
 -#include <unistd.h>
 -#endif
 -#include <iostream>
 -
- extern "C" Q_DECL_EXPORT int kdemain(int argc, char **argv)
+ int main(int argc, char **argv)
  {
 -#ifndef Q_OS_WIN
 -    // Prohibit using sudo or kdesu (but allow using the root user directly)
@@ -37,6 +24,6 @@ Index: dolphin-18.07.70git.20180603T132131~3c6ecfa24/src/main.cpp
 -        }
 -    }
 -#endif
- 
-     QApplication app(argc, argv);
-     app.setAttribute(Qt::AA_UseHighDpiPixmaps, true);
+
+     /**
+      * enable high dpi support
