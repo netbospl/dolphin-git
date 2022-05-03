@@ -1,6 +1,4 @@
-# Maintainer katt <magunasu.b97@gmail.com>
-# Contributor: Antonio Rojas <arojas@archlinux,org>
-# Contributor: Piotr Matela <piotrekmat@protonmail.com>
+# Maintainer Piotr Matela <piotrekmat@protonmail.com>
 
 pkgname=dolphin-git
 pkgver=22.04.0.r55.g9b5f56980
