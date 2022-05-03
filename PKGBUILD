@@ -16,7 +16,7 @@ conflicts=("${pkgname%-git}")
 source=('git+https://invent.kde.org/system/dolphin.git'
 	'0001-Revert-Disallow-executing-Dolphin-as-root-on-Linux.patch')
 md5sums=('SKIP'
-	'fda53ae700672c25a5278b4e6f91bc74')
+	'0d7e252752080fb3c38093dfab42ea63')
 
 pkgver() {
     git -C "${pkgname%-git}" describe --long | sed 's/^v//;s/\([^-]*-g\)/r\1/;s/-/./g'
